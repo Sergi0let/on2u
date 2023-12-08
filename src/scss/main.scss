@@ -2,9 +2,9 @@
 .banner {
   @include adaptiveValue("height", 40, 30);
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: center;
 
   position: relative;
 
@@ -20,6 +20,10 @@
     display: none; /* Chrome, Safari, Opera */
   }
 
+  & > div {
+    justify-self: center;
+  }
+
   b {
     margin-right: toRem(8);
     color: var(--text-hover);
@@ -28,12 +32,21 @@
 
   button {
     margin-left: toRem(8);
-
-    position: absolute;
-    right: toRem(12);
-    @include adaptiveValue("font-size", 34, 14);
-    font-weight: 400;
+    margin-right: toRem(12);
+    svg {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      svg {
+        fill: var(--text-hover);
+      }
+    }
+  }
+  a {
+    padding-left: toRem(8);
+    text-decoration: underline;
     color: var(--text-secondary);
+    margin-right: toRem(10);
   }
 }
 //====================================================================================================

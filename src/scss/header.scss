@@ -34,7 +34,9 @@
   }
 
   &__logo {
-    @include adaptiveValue("margin-right", 72, 20);
+    @media (min-width: $pc) {
+      margin-right: toRem(72);
+    }
   }
 
   &__menu {
@@ -43,6 +45,7 @@
 }
 
 .menu {
+  display: none;
   width: 100%;
   height: 100%;
 
@@ -52,6 +55,10 @@
   left: 0;
 
   overflow-y: auto;
+
+  .menu-open & {
+    display: block;
+  }
   @media (min-width: $tablet) {
     display: block;
 
@@ -103,10 +110,16 @@
     @media (min-width: $tablet) {
       height: auto;
 
+      padding: 0 toRem(20);
+
       display: flex;
 
       left: 0;
       @include adaptiveValue("column-gap", 32, 20);
+    }
+
+    @media (min-width: $pc) {
+      padding: 0 toRem(20);
     }
   }
 
@@ -159,7 +172,6 @@
       &.men {
         &:hover {
           .menu__men-menu {
-            // display: block;
             transform: scaleY(1);
           }
         }
@@ -167,7 +179,6 @@
       &.women {
         &:hover {
           .menu__women-menu {
-            // display: block;
             transform: scaleY(1);
           }
         }
@@ -237,6 +248,126 @@
     display: none;
     @media (min-width: $tablet) {
       display: block;
+      white-space: nowrap;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    & > * {
+      position: relative;
+
+      line-height: 2;
+      font-size: toRem(16);
+
+      transition: color 0.3s;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: toRem(1);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background: var(--bg-btn-hover);
+        transition: width 0.3s;
+      }
+
+      &:not(&:last-child) {
+        margin-right: 8px;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-hover);
+          &::after {
+            content: "";
+            width: 100%;
+          }
+        }
+      }
+    }
+    @media (min-width: $tablet) {
+      & > * {
+        &:not(&:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+    @media (min-width: $pc) {
+      & > * {
+        &:not(&:last-child) {
+          margin-right: 48px;
+        }
+      }
+    }
+  }
+
+  &__user {
+    @include adaptiveValue("margin-left", 48, 2);
+
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    column-gap: toRem(20);
+
+    @media (min-width: $pc) {
+      grid-template-columns: repeat(4, 28px);
+      column-gap: toRem(32);
+    }
+    a {
+      position: relative;
+      text-align: center;
+      svg {
+        width: toRem(20);
+        height: toRem(20);
+
+        transition: fill 0.3s;
+        @media (min-width: $tablet) {
+          width: auto;
+          height: auto;
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          svg {
+            fill: var(--bg-btn-hover);
+          }
+          &::after {
+            background: var(--bg-btn-hover);
+          }
+        }
+      }
+
+      // &::after {
+      //   content: "6";
+      //   width: toRem(18);
+      //   height: toRem(18);
+
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+
+      //   position: absolute;
+      //   top: -40%;
+      //   right: -33%;
+
+      //   background: var(--bg-black);
+      //   border-radius: 50%;
+      //   transition: background 0.3s;
+
+      //   color: #fff;
+      //   font-size: toRem(12);
+
+      //   @media (min-width: $tablet) {
+      //     width: toRem(24);
+      //     height: toRem(24);
+
+      //     font-size: toRem(14);
+      //   }
+      // }
     }
   }
 }

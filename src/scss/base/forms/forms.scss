@@ -1,18 +1,23 @@
 //<FORM>
 // Сніппет (HTML):
 .form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
-	}
+  &__row {
+  }
+  &__column {
+  }
+  &__line {
+  }
+  &__input {
+  }
+  &__button {
+  }
+  &__error {
+    color: var(--bg-danger);
+
+    .popup__submit & {
+      background: var(--bg-btn-stroke);
+    }
+  }
 }
 //</FORM>
 
@@ -22,7 +27,7 @@
 
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сніппет (HTML): chk
@@ -30,7 +35,7 @@
 
 // <RADIO>
 // Сніппет (HTML): opt
-// @import "radio";
+@import "radio";
 
 // <SELECT>
 // Сніппет (HTML): sel

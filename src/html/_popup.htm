@@ -1,10 +1,80 @@
 <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <button
+        data-close
+        type="button"
+        id="close-popup"
+        title="closePopup"
+        class="popup__close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="#5C5C5C"
+        >
+          <path
+            d="M20 1.17833L18.8217 0L10 8.82167L1.17833 0L0 1.17833L8.82167 10L0 18.8217L1.17833 20L10 11.1783L18.8217 20L20 18.8217L11.1783 10L20 1.17833Z"
+          />
+        </svg>
+      </button>
+      <div class="popup__text">
+        <div><b>10% off</b></div>
+        <div>For the first order for new customers</div>
+      </div>
+      <div class="popup__form">
+        <form action="#" method="POST" class="form">
+          <label class="popup__mail-label" for="email">Email:</label>
+          <input
+            id="email"
+            data-validate
+            type="text"
+            name="form[email]"
+            data-error="Invalid email format"
+            placeholder="Your email"
+            class="input"
+            data-required="email"
+            email
+          />
+
+          <fieldset>
+            <label class="popup__mail-label" for="email">Male or female</label>
+            <div class="options">
+              <div class="options__item">
+                <input
+                  data-required
+                  id="o_1"
+                  class="options__input"
+                  checked
+                  type="radio"
+                  value="1"
+                  name="option"
+                />
+                <label for="o_1" class="options__label"
+                  ><span class="options__text">MALE</span></label
+                >
+              </div>
+              <div class="options__item">
+                <input
+                  data-required
+                  id="o_2"
+                  class="options__input"
+                  type="radio"
+                  value="2"
+                  name="option"
+                />
+                <label for="o_2" class="options__label"
+                  ><span class="options__text">FEMALE</span></label
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <input class="popup__submit" type="submit" value="I WANT THE CODE" />
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
