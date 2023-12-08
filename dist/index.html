@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231208135322" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="description" content="Explore the latest fashion trends for men and women at our online clothing store. Discover a wide range of stylish apparel, from casual wear to formal attire. Find the perfect outfits that suit your style and elevate your wardrobe with our curated collection. Shop now for the latest in men's and women's fashion." />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="banner">
+			<span> <b>10% off</b> For the first order for new customers</span>
+			<button id="banner">&times;</button>
+		</div>
+		<header class="header">
+			<div class="header__container">
+				<div class="header__right">
+					<button id="btn-open" title="menu" type="button" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<a href="/" class="header__logo">
+						<picture>
+							<!-- Зображення для малих екранів -->
+							<source media="(max-width: 991.98px)" srcset="img/logo/logo-mob.png" width="92" height="20" />
+
+							<!-- Зображення для середніх і великих екранів -->
+							<source media="(min-width: 992px)" srcset="img/logo/logo-web.png" width="142" height="38" />
+
+							<!-- Зображення за замовчуванням (якщо жоден з умов не виконується) -->
+							<img src="img/logo/logo-web.png" width="142" height="38" alt="Опис зображення" />
+						</picture>
+					</a>
+					<div class="header__menu">
+						<div class="menu">
+							<ul class="menu__list">
+								<li class="menu__top">
+									<span class="menu__title">Menu</span>
+									<button id="btn-close" title="menu" type="button" class="menu__icon icon-menu">
+										<span></span>
+									</button>
+								</li>
+								<li class="menu__item men">
+									<span>MEN</span>
+									<ul class="menu__men-menu">
+										<li class="active">Shirts</li>
+										<li>Sweatshirts</li>
+										<li>Hoodies</li>
+										<li>Joggers & Shorts</li>
+									</ul>
+								</li>
+								<li class="menu__item women">
+									<span>WOMEN</span>
+									<ul class="menu__women-menu">
+										<li>Shirts</li>
+										<li>Sweatshirts</li>
+										<li>Hoodies</li>
+										<li>Joggers & Shorts</li>
+									</ul>
+								</li>
+								<li class="menu__item contacts">
+									<ul class="menu__contacts-menu">
+										<li><a href="">service@on2u.de</a></li>
+										<li>+49(0)3301 5229250</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<nav class="header__left nav">
+					<a class="nav__mail" href="mailto:service@on2u.de">service@on2u.de</a>
+					<a class="nav__tel" href="tel:+49033015229250">&phone; +49(0)3301 5229250</a>
+					<span class="nav__user">
+						<button class="nav__search">&malt;</button>
+						<button class="nav__user">&phone;</button>
+						<button class="nav__favorite">&hearts;</button>
+						<button class="nav__cart">&starf;</button>
+					</span>
+				</nav>
+			</div>
+		</header>
+
+		<main class="page">
+			<section class="main">
+				<article class="main__image-ibg">
+					<picture><source srcset="img/main/men.webp" type="image/webp"><img src="img/main/men.jpg" alt="men" /></picture>
+					<div class="main__block">
+						<h2>men</h2>
+						<a href="#">shop now</a>
+					</div>
+				</article>
+
+				<article class="main__image-ibg">
+					<picture><source srcset="img/main/women.webp" type="image/webp"><img src="img/main/women.jpg" alt="" /></picture>
+					<div class="main__block">
+						<h2>women</h2>
+						<a href="#">shop now</a>
+					</div>
+				</article>
+			</section>
+			<div class="page__container">
+				<p style="font-weight: 800">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+				<p style="font-weight: 700">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+				<p style="font-weight: 600">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+				<p style="font-weight: 500">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+				<p style="font-weight: 400">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+					molestias illum ullam h
+				</p>
+				<br />
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top">
+					<div class="footer__block">
+						<p>KONTAKT</p>
+						<ul>
+							<li>Unser support ist Mo-Fr von 9:00-17:00 Uhr erreichbar!</li>
+							<li><a href="mailto:info@on2u.com">info@on2u.com</a></li>
+							<li><a href="tel:+49033015229250">+49(0)3301 5229250</a></li>
+						</ul>
+					</div>
+					<div class="footer__block">
+						<p>HELP & INFORMATION</p>
+						<ul>
+							<li><a href="/about">About us</a></li>
+							<li><a href="/contacts">Contacts</a></li>
+							<li><a href="#">Delivery time and cost</a></li>
+						</ul>
+					</div>
+					<div class="footer__block">
+						<p>CATEGORIES</p>
+						<ul>
+							<li><a href="/shirts">Shirts</a></li>
+							<li><a href="/sweatshirts">Sweatshirts</a></li>
+							<li><a href="/hoodies">Hoodies</a></li>
+						</ul>
+					</div>
+					<div class="footer__block">
+						<p>TERMS AND CONDITIONS</p>
+						<ul>
+							<li><a href="/policy">Privacy policy</a></li>
+							<li><a href="/return-policy">Return policy</a></li>
+							<li><a href="/terms">General terms and conditions</a></li>
+							<li><a href="#">Imprint</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<div class="copy">&copy; 2023 on2u.</div>
+					<div class="payments">
+						<picture><source srcset="img/payments/1.webp" type="image/webp"><img width="40" height="20" src="img/payments/1.png" alt="" /></picture>
+						<picture><source srcset="img/payments/2.webp" type="image/webp"><img width="40" height="20" src="img/payments/2.png" alt="" /></picture>
+						<picture><source srcset="img/payments/3.webp" type="image/webp"><img width="40" height="20" src="img/payments/3.png" alt="" /></picture>
+						<picture><source srcset="img/payments/4.webp" type="image/webp"><img width="40" height="20" src="img/payments/4.png" alt="" /></picture>
+						<picture><source srcset="img/payments/5.webp" type="image/webp"><img width="40" height="20" src="img/payments/5.png" alt="" /></picture>
+						<picture><source srcset="img/payments/6.webp" type="image/webp"><img width="40" height="20" src="img/payments/6.png" alt="" /></picture>
+						<picture><source srcset="img/payments/7.webp" type="image/webp"><img width="40" height="20" src="img/payments/7.png" alt="" /></picture>
+
+						<picture><source srcset="img/payments/1.webp" type="image/webp"><img width="40" height="20" src="img/payments/1.png" alt="" /></picture>
+						<picture><source srcset="img/payments/2.webp" type="image/webp"><img width="40" height="20" src="img/payments/2.png" alt="" /></picture>
+						<picture><source srcset="img/payments/3.webp" type="image/webp"><img width="40" height="20" src="img/payments/3.png" alt="" /></picture>
+						<picture><source srcset="img/payments/4.webp" type="image/webp"><img width="40" height="20" src="img/payments/4.png" alt="" /></picture>
+						<picture><source srcset="img/payments/5.webp" type="image/webp"><img width="40" height="20" src="img/payments/5.png" alt="" /></picture>
+						<picture><source srcset="img/payments/6.webp" type="image/webp"><img width="40" height="20" src="img/payments/6.png" alt="" /></picture>
+						<picture><source srcset="img/payments/7.webp" type="image/webp"><img width="40" height="20" src="img/payments/7.png" alt="" /></picture>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20231208135322"></script>
+</body>
+
+</html>

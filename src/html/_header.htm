@@ -1,0 +1,94 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__right">
+      <button
+        id="btn-open"
+        title="menu"
+        type="button"
+        class="menu__icon icon-menu"
+      >
+        <span></span>
+      </button>
+      <a href="/" class="header__logo">
+        <picture>
+          <!-- Зображення для малих екранів -->
+          <source
+            media="(max-width: 991.98px)"
+            srcset="@img/logo/logo-mob.png"
+            width="92"
+            height="20"
+          />
+
+          <!-- Зображення для середніх і великих екранів -->
+          <source
+            media="(min-width: 992px)"
+            srcset="@img/logo/logo-web.png"
+            width="142"
+            height="38"
+          />
+
+          <!-- Зображення за замовчуванням (якщо жоден з умов не виконується) -->
+          <img
+            src="@img/logo/logo-web.png"
+            width="142"
+            height="38"
+            alt="Опис зображення"
+          />
+        </picture>
+      </a>
+      <div class="header__menu">
+        <div class="menu">
+          <ul class="menu__list">
+            <li class="menu__top">
+              <span class="menu__title">Menu</span>
+              <button
+                id="btn-close"
+                title="menu"
+                type="button"
+                class="menu__icon icon-menu"
+              >
+                <span></span>
+              </button>
+            </li>
+            <li class="menu__item men">
+              <span>MEN</span>
+              <ul class="menu__men-menu">
+                <li class="active">Shirts</li>
+                <li>Sweatshirts</li>
+                <li>Hoodies</li>
+                <li>Joggers & Shorts</li>
+              </ul>
+            </li>
+            <li class="menu__item women">
+              <span>WOMEN</span>
+              <ul class="menu__women-menu">
+                <li>Shirts</li>
+                <li>Sweatshirts</li>
+                <li>Hoodies</li>
+                <li>Joggers & Shorts</li>
+              </ul>
+            </li>
+            <li class="menu__item contacts">
+              <ul class="menu__contacts-menu">
+                <li><a href="">service@on2u.de</a></li>
+                <li>+49(0)3301 5229250</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="header__left nav">
+      <a class="nav__mail" href="mailto:service@on2u.de">service@on2u.de</a>
+      <a class="nav__tel" href="tel:+49033015229250"
+        >&phone; +49(0)3301 5229250</a
+      >
+      <span class="nav__user">
+        <button class="nav__search">&malt;</button>
+        <button class="nav__user">&phone;</button>
+        <button class="nav__favorite">&hearts;</button>
+        <button class="nav__cart">&starf;</button>
+      </span>
+    </nav>
+  </div>
+</header>

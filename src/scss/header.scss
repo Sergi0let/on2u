@@ -1,0 +1,305 @@
+//====================================================================================================
+.header {
+  padding: toRem(20) 0;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: #fff;
+
+  @media (min-width: $tablet) {
+    padding: 0;
+  }
+
+  .menu-open & {
+    position: static;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    margin-right: toRem(12);
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    @include adaptiveValue("margin-right", 72, 20);
+  }
+
+  &__menu {
+    background: #fff !important;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  overflow-y: auto;
+  @media (min-width: $tablet) {
+    display: block;
+
+    position: static;
+    overflow-y: visible;
+  }
+
+  &__top {
+    display: flex;
+
+    padding: toRem(20) 0 toRem(20);
+
+    position: relative;
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 1px;
+
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+
+      background-color: var(--bg-btn-stroke);
+    }
+    @media (min-width: $tablet) {
+      display: none;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    flex: 1;
+  }
+  &__list {
+    padding: 0 toRem(20);
+    position: relative;
+
+    left: -100%;
+    transition: left 0.3s;
+
+    background: #fff;
+
+    .menu-open & {
+      left: 0;
+    }
+    @media (min-width: $tablet) {
+      height: auto;
+
+      display: flex;
+
+      left: 0;
+      @include adaptiveValue("column-gap", 32, 20);
+    }
+  }
+
+  &__item {
+    padding: toRem(24) 0;
+
+    position: relative;
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 1px;
+
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+
+      background-color: var(--bg-btn-stroke);
+    }
+
+    span {
+      display: block;
+
+      margin-bottom: toRem(20);
+    }
+    &.contacts {
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+    @media (min-width: $tablet) {
+      padding: toRem(8);
+
+      position: relative;
+
+      font-size: toRem(20);
+      font-weight: 500;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &::after {
+        display: none;
+      }
+
+      span {
+        display: inline;
+
+        margin-bottom: toRem(0);
+      }
+
+      &.men {
+        &:hover {
+          .menu__men-menu {
+            // display: block;
+            transform: scaleY(1);
+          }
+        }
+      }
+      &.women {
+        &:hover {
+          .menu__women-menu {
+            // display: block;
+            transform: scaleY(1);
+          }
+        }
+      }
+
+      span {
+        line-height: toRem(104);
+      }
+    }
+  }
+
+  &__women-menu,
+  &__men-menu {
+    padding-left: toRem(16);
+
+    background: #fff;
+
+    font-size: toRem(16);
+
+    li {
+      &:not(&:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
+    @media (min-width: $tablet) {
+      width: toRem(215);
+      padding: toRem(10) 0;
+
+      // display: none;
+      transform: scaleY(0);
+      transition: transform 0.3s;
+
+      position: absolute;
+      top: 90%;
+      left: -20%;
+
+      border-top: 2px solid #000;
+      background: #fff;
+
+      font-size: toRem(16);
+      line-height: 1.6;
+      box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+
+      li {
+        padding: toRem(10) toRem(14) toRem(10) toRem(32);
+
+        &:hover {
+          background: var(--bg-primary);
+        }
+      }
+    }
+  }
+
+  &__contacts-menu {
+    li {
+      font-size: toRem(16);
+      &:not(&:last-child) {
+        margin-bottom: toRem(24);
+      }
+    }
+  }
+}
+
+.nav {
+  &__mail,
+  &__tel {
+    display: none;
+    @media (min-width: $tablet) {
+      display: block;
+    }
+  }
+}
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: none;
+  @media (max-width: $tablet) {
+    width: toRem(30);
+    height: toRem(18);
+
+    margin-right: toRem(20);
+
+    display: block;
+
+    position: relative;
+    z-index: 101;
+
+    .menu-open & {
+      z-index: 100;
+    }
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: toRem(2);
+
+      position: absolute;
+      right: 0;
+      transition: all 0.3s ease 0s;
+
+      background-color: var(--bg-black);
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - toRem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - toRem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - toRem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

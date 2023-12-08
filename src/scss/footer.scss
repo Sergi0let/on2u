@@ -1,0 +1,108 @@
+//====================================================================================================
+.copy {
+  margin-right: toRem(20);
+
+  flex-grow: 1;
+
+  font-size: toRem(14);
+  line-height: 1.6;
+  white-space: nowrap;
+
+  &:not(&:last-child) {
+    margin-bottom: toRem(20);
+  }
+
+  @media (min-width: $mobile) {
+    font-size: toRem(16);
+
+    &:not(&:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: toRem(8);
+  img {
+    border-radius: toRem(4);
+    border: 1px solid var(--bg-secondary);
+  }
+}
+//====================================================================================================
+.footer {
+  padding: toRem(56) 0 toRem(56) 0;
+  background-color: var(--bg-primary);
+
+  @media (min-width: $mobile) {
+    padding: toRem(80) 0 toRem(42) 0;
+  }
+
+  &__top {
+    margin-bottom: toRem(56);
+
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 260px));
+      justify-content: space-between;
+      column-gap: toRem(8);
+    }
+  }
+
+  &__block {
+    line-height: 1.6;
+
+    p {
+      font-size: toRem(18);
+      text-transform: uppercase;
+      color: #000;
+
+      &:not(&:last-child) {
+        margin-bottom: toRem(18);
+      }
+
+      @media (min-width: $tablet) {
+        font-size: toRem(20);
+        &:not(&:last-child) {
+          margin-bottom: toRem(32);
+        }
+      }
+    }
+
+    li {
+      position: relative;
+
+      color: var(--text-secondary);
+      font-size: toRem(14);
+      transition: all 0.3s;
+
+      &:not(&:last-child) {
+        margin-bottom: toRem(8);
+      }
+
+      @media (min-width: $tablet) {
+        font-size: toRem(16);
+        &:not(&:last-child) {
+          margin-bottom: toRem(16);
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-hover);
+        }
+      }
+    }
+
+    &:not(&:last-child) {
+      margin-bottom: toRem(24);
+    }
+  }
+
+  &__bottom {
+    @media (min-width: $mobile) {
+      display: flex;
+    }
+  }
+}
