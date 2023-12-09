@@ -8,9 +8,64 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class*="icon-"] {
+[class*="_icon-"] {
   &:before {
     @extend %ic;
     display: block;
   }
+}
+
+._icon-phone:before {
+  content: "\e912";
+}
+._icon-share:before {
+  content: "\e901";
+}
+._icon-search:before {
+  content: "\e902";
+}
+._icon-person:before {
+  content: "\e903";
+}
+._icon-mail:before {
+  content: "\e904";
+}
+._icon-machine-wash:before {
+  content: "\e905";
+}
+._icon-heart:before {
+  content: "\e906";
+}
+._icon-filter:before {
+  content: "\e907";
+}
+._icon-document:before {
+  content: "\e908";
+}
+._icon-delivery:before {
+  content: "\e909";
+}
+._icon-cross:before {
+  content: "\e90a";
+}
+._icon-credit-card:before {
+  content: "\e90b";
+}
+._icon-check:before {
+  content: "\e90c";
+}
+._icon-change:before {
+  content: "\e90d";
+}
+._icon-burger:before {
+  content: "\e90e";
+}
+._icon-bag:before {
+  content: "\e90f";
+}
+._icon-angle-top:before {
+  content: "\e910";
+}
+._icon-angle-down:before {
+  content: "\e911";
 }

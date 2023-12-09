@@ -1,16 +1,18 @@
 //====================================================================================================
 .banner {
-  @include adaptiveValue("height", 40, 30);
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
+  @include adaptiveValue("min-height", 40, 30);
 
   position: relative;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: toRem(6) toRem(20);
+
   background-color: var(--bg-secondary);
   @include adaptiveValue("font-size", 14, 12);
-  white-space: nowrap;
+  text-align: center;
 
   overflow-x: scroll;
   /* Щоб приховати смугу прокрутки */
@@ -20,10 +22,6 @@
     display: none; /* Chrome, Safari, Opera */
   }
 
-  & > div {
-    justify-self: center;
-  }
-
   b {
     margin-right: toRem(8);
     color: var(--text-hover);
@@ -31,22 +29,27 @@
   }
 
   button {
-    margin-left: toRem(8);
-    margin-right: toRem(12);
-    svg {
-      transition: fill 0.3s;
+    position: absolute;
+    top: toRem(12);
+    right: toRem(12);
+    transition: color 0.3s;
+
+    @include adaptiveValue("font-size", 16, 12);
+
+    &::before {
+      color: var(--text-secondary);
     }
+
     &:hover {
-      svg {
-        fill: var(--text-hover);
-      }
+      color: var(--text-hover);
     }
   }
   a {
     padding-left: toRem(8);
+    margin-right: toRem(10);
     text-decoration: underline;
     color: var(--text-secondary);
-    margin-right: toRem(10);
+    white-space: nowrap;
   }
 }
 //====================================================================================================

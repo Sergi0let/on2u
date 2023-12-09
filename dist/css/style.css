@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: Poppins;
+  font-family: icons;
   font-display: swap;
-  src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2"), url("../fonts/Poppins-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -27,8 +27,8 @@
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2"), url("../fonts/Poppins-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -38,6 +38,101 @@
   src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-display: swap;
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
+._icon-phone:before {
+  content: "\e912";
+}
+
+._icon-share:before {
+  content: "\e901";
+}
+
+._icon-search:before {
+  content: "\e902";
+}
+
+._icon-person:before {
+  content: "\e903";
+}
+
+._icon-mail:before {
+  content: "\e904";
+}
+
+._icon-machine-wash:before {
+  content: "\e905";
+}
+
+._icon-heart:before {
+  content: "\e906";
+}
+
+._icon-filter:before {
+  content: "\e907";
+}
+
+._icon-document:before {
+  content: "\e908";
+}
+
+._icon-delivery:before {
+  content: "\e909";
+}
+
+._icon-cross:before {
+  content: "\e90a";
+}
+
+._icon-credit-card:before {
+  content: "\e90b";
+}
+
+._icon-check:before {
+  content: "\e90c";
+}
+
+._icon-change:before {
+  content: "\e90d";
+}
+
+._icon-burger:before {
+  content: "\e90e";
+}
+
+._icon-bag:before {
+  content: "\e90f";
+}
+
+._icon-angle-top:before {
+  content: "\e910";
+}
+
+._icon-angle-down:before {
+  content: "\e911";
 }
 
 :root {
@@ -654,15 +749,27 @@ body::after {
   margin-bottom: 1.5rem;
 }
 
+.nav * > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav * > a::before {
+  padding-right: 0.625rem;
+  font-size: 1.125rem;
+}
+
 .nav__mail,
 .nav__tel {
   display: none;
 }
 
 .nav__contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -692,25 +799,51 @@ body::after {
 }
 
 .nav__user {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (20px)[4];
-  grid-template-columns: repeat(4, 20px);
-  -webkit-column-gap: 1.25rem;
-     -moz-column-gap: 1.25rem;
-          column-gap: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
 }
 
 .nav__user a {
   position: relative;
-  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.nav__user a svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  -webkit-transition: fill 0.3s;
-  transition: fill 0.3s;
+.nav__user a::before {
+  font-size: 1.5rem;
+}
+
+.nav__user a::before:not(.nav__user a::before:last-child) {
+  padding-right: 2rem !important;
+}
+
+.nav__count {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: -54%;
+  right: -16%;
+  background: var(--bg-btn-hover);
+  border-radius: 50%;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.nav__count._count-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .icon-menu {
@@ -785,16 +918,19 @@ body::after {
 }
 
 .banner {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-  grid-template-columns: 1fr auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.375rem 1.25rem;
   background-color: var(--bg-secondary);
-  white-space: nowrap;
+  text-align: center;
   overflow-x: scroll;
   /* Щоб приховати смугу прокрутки */
   scrollbar-width: thin;
@@ -808,11 +944,6 @@ body::after {
   /* Chrome, Safari, Opera */
 }
 
-.banner > div {
-  -ms-grid-column-align: center;
-      justify-self: center;
-}
-
 .banner b {
   margin-right: 0.5rem;
   color: var(--text-hover);
@@ -820,24 +951,27 @@ body::after {
 }
 
 .banner button {
-  margin-left: 0.5rem;
-  margin-right: 0.75rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
-.banner button svg {
-  -webkit-transition: fill 0.3s;
-  transition: fill 0.3s;
+.banner button::before {
+  color: var(--text-secondary);
 }
 
-.banner button:hover svg {
-  fill: var(--text-hover);
+.banner button:hover {
+  color: var(--text-hover);
 }
 
 .banner a {
   padding-left: 0.5rem;
+  margin-right: 0.625rem;
   text-decoration: underline;
   color: var(--text-secondary);
-  margin-right: 0.625rem;
+  white-space: nowrap;
 }
 
 .main {
@@ -1059,13 +1193,28 @@ body::after {
     white-space: nowrap;
   }
 
+  .nav__contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .nav__contacts > *:not(.nav__contacts > *:last-child) {
     margin-right: 20px;
   }
 
-  .nav__user a svg {
-    width: auto;
-    height: auto;
+  .nav__user {
+    gap: 32px;
+  }
+
+  .nav__user a::before {
+    font-size: 2rem;
+  }
+
+  .nav__count {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.875rem;
   }
 
   .footer__top {
@@ -1123,20 +1272,16 @@ body::after {
     margin-left: 3rem;
   }
 
-  .nav__user {
-    -ms-grid-columns: (28px)[4];
-    grid-template-columns: repeat(4, 28px);
-    -webkit-column-gap: 2rem;
-       -moz-column-gap: 2rem;
-            column-gap: 2rem;
-  }
-
   .banner {
-    height: 2.5rem;
+    min-height: 2.5rem;
   }
 
   .banner {
     font-size: 0.875rem;
+  }
+
+  .banner button {
+    font-size: 1rem;
   }
 
   .main__block h2 {
@@ -1150,10 +1295,14 @@ body::after {
   }
 
   .banner {
-    height: 1.875rem;
+    min-height: 1.875rem;
   }
 
   .banner {
+    font-size: 0.75rem;
+  }
+
+  .banner button {
     font-size: 0.75rem;
   }
 
@@ -1265,15 +1414,15 @@ body::after {
     }
 }
 
-@supports (height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem )) {
+@supports (min-height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem )) {
     .banner {
-      height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem );
+      min-height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem );
     }
 }
 
-@supports not (height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem )) {
+@supports not (min-height: clamp( 1.875rem , 1.6826923077rem  +  0.9615384615vw , 2.5rem )) {
     .banner {
-      height: calc(1.875rem + 0.625 * (100vw - 20rem) / 65);
+      min-height: calc(1.875rem + 0.625 * (100vw - 20rem) / 65);
     }
 }
 
@@ -1286,6 +1435,18 @@ body::after {
 @supports not (font-size: clamp( 0.75rem , 0.7115384615rem  +  0.1923076923vw , 0.875rem )) {
     .banner {
       font-size: calc(0.75rem + 0.125 * (100vw - 20rem) / 65);
+    }
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6730769231rem  +  0.3846153846vw , 1rem )) {
+    .banner button {
+      font-size: clamp( 0.75rem , 0.6730769231rem  +  0.3846153846vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6730769231rem  +  0.3846153846vw , 1rem )) {
+    .banner button {
+      font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 65);
     }
 }
 
@@ -1312,12 +1473,8 @@ body::after {
     width: 100%;
   }
 
-  .nav__user a:hover svg {
-    fill: var(--bg-btn-hover);
-  }
-
-  .nav__user a:hover::after {
-    background: var(--bg-btn-hover);
+  .nav__user a:hover {
+    color: var(--bg-btn-hover);
   }
 
   .footer__block li:hover {
